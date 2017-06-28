@@ -7,6 +7,7 @@
 #include "Poco/Timer.h"
 #include "Poco/Thread.h"
 #include "Poco/Stopwatch.h"
+#include "hello.h"
 #include <iostream>
 
 using Poco::Timer;
@@ -19,7 +20,8 @@ public:
         TimerExample(){ _sw.start();}
 
         void onTimer(Timer& timer){
-                std::cout << "Callback called after " << _sw.elapsed()/1000 << " milliseconds." << std::endl;
+          std::cout << "Callback called after " << _sw.elapsed()/1000 << " milliseconds." << std::endl;
+          hello();
         }
 private:
         Stopwatch _sw;
